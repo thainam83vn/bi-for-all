@@ -1,5 +1,10 @@
-FROM node:8
-WORKDIR /src
-COPY build build
-RUN npm install -g serve
-CMD serve -s build -l 80
+FROM node:alpine as builder
+WORKDIR /app
+COPY ./package.json ./
+RUN npm i
+COPY . .
+RUN npm run build
+
+FROM nginx
+COPY --from=builder /app/build /usr/shared/nginx/html
+EXPOSE 3000:80
