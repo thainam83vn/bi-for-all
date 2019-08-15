@@ -7,14 +7,6 @@
       "hostname": "client",
       "essential": false,
       "memory": 128
-    },
-    {
-      "name": "nginx",
-      "image": "thainam83vn/bi4a-nginx",
-      "hostname": "nginx",
-      "essential": true,
-      "memory": 128,
-      "links": ["client"]
     }
   ]
 }
