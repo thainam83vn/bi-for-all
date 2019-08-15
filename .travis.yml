@@ -1,0 +1,29 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build ./client -f Dockerfile.dev -t thainam83vn/bi4a-client-test
+
+script:
+  - docker run thainam83vn/bi4a-client-test npm run test -- --coverage
+
+after_install:
+  - docker build ./client -t thainam83vn/bi4a-client
+  - docker build ./nginx -t thainam83vn/bi4a-nginx
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"
+  - docker push thainam83vn/bi4a-client
+  - docker push thainam83vn/bi4a-nginx
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1
+  app: docker
+  env: eazybi-env
+  bucket_name: elasticbeanstalk-us-east-1-793085127332
+  bucket_path: eazybi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_ID
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
