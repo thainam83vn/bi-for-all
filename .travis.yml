@@ -18,10 +18,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: us-east-1
-  app: docker
-  env: bi4a-env
+  app: app1
+  env: App1-env
   bucket_name: elasticbeanstalk-us-east-1-793085127332
-  bucket_path: eazybi
+  bucket_path: app1
   on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
