@@ -1,0 +1,18 @@
+.menu > div{
+  position: relative;
+}
+.menu > div > i{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+}
+
+.menu ul li{
+  cursor: pointer;
+  padding: 2px;
+}
+
+.menu ul li:hover{
+  background: #000000;
+}
