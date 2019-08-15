@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build ./client -f Dockerfile.dev -t thainam83vn/bi4a-client-test
+  - docker build ./client -f ./client/Dockerfile.dev -t thainam83vn/bi4a-client-test
 
 script:
   - docker run thainam83vn/bi4a-client-test npm run test -- --coverage
