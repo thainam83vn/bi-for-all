@@ -11,7 +11,7 @@ script:
 after_success:
   - docker build ./client -t thainam83vn/bi4a-client
   - docker build ./nginx -t thainam83vn/bi4a-nginx
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push thainam83vn/bi4a-client
   - docker push thainam83vn/bi4a-nginx
 
