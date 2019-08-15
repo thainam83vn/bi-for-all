@@ -19,7 +19,7 @@ deploy:
   provider: elasticbeanstalk
   region: us-east-1
   app: docker
-  env: eazybi-env
+  env: bi4a-env
   bucket_name: elasticbeanstalk-us-east-1-793085127332
   bucket_path: eazybi
   on:
