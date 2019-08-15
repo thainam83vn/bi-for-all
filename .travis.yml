@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run thainam83vn/bi4a-client-test npm run test -- --coverage
 
-after_install:
+after_success:
   - docker build ./client -t thainam83vn/bi4a-client
   - docker build ./nginx -t thainam83vn/bi4a-nginx
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID"
