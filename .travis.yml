@@ -18,8 +18,8 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: us-east-1
-  app: app2
-  env: App2-env
+  app: eazybi-app
+  env: EazybiApp-env
   bucket_name: elasticbeanstalk-us-east-1-793085127332
   bucket_path: app2
   on:
