@@ -6,7 +6,7 @@
     "components": "0.1.0",
     "csvtojson": "^1.1.9",
     "prop-types": "^15.6.0",
-    "react": "16.0.0",
+    "react": "16.5.0",
     "react-color": "^2.13.8",
     "react-d3": "^0.4.0",
     "react-dom": "16.0.0",
@@ -15,8 +15,8 @@
     "react-json-tree": "^0.11.0",
     "react-redux": "^5.0.6",
     "react-splitter-layout": "^3.0.0",
-    "recharts": "^1.0.0-beta.9",
-    "redux": "^3.7.2",
+    "recharts": "^2.12.1",
+    "redux": "^4.0.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
